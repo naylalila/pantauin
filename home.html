@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PANTAU.IN - SMKN 1 Banyuwangi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">PANTAU.IN</div>
+        <ul class="nav-links">
+           <li><a href="home.html">HOME</a></li>
+            <li><a href="#informasi-section">INFORMASI</a></li>
+            <li><a href="#dokumentasi-section">DOKUMENTASI</a></li>
+            <li><a href="about.html" class="btn-about" id="btnAbout">ABOUT</a></li>
+        </ul>
+    </nav>
+
+ <header class="hero">
+    <img src="smkn.png" alt="Gedung SMKN 1 Banyuwangi" class="hero-img">
+    
+    <div class="hero-content">
+        <h1>SELAMAT DATANG DI PUSAT<br>INFORMASI DAN DOKUMENTASI SISWA</h1>
+        <p>Akses cepat, Pengumuman terbaru, Jadwal dan Galeri Kegiatan Sekolah</p>
+    </div>
+</header>
+
+    <section class="search-section">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Cari informasi...">
+            <button id="searchButton"><i class="fas fa-search"></i></button>
+        </div>
+        <p>Searching untuk mendapatkan informasi yang kamu inginkan</p>
+
+        <div id="search-results-container"></div>
+    </section>
+
+    <section class="informasi-section" id="informasi-section">
+    <h2>UPDATE INFORMASI TERKINI</h2>
+
+        <div class="info-grid">
+            
+            <div class="card-main">
+                <div class="badge badge-red">PENTING</div>
+                <h3>PENGUMUMAN PENTING:<br>UPACARA HARDIKNAS 2026</h3>
+                <ul class="info-details">
+                    <li><i class="far fa-calendar-alt"></i> Sabtu, 2 Mei 2026</li>
+                    <li><i class="far fa-clock"></i> 07.00 - 10.00</li>
+                    <li><i class="fas fa-file-alt"></i> <a href="informasi.html">Lihat Rincian</a></li>
+                </ul>
+                <p class="post-time">Diposting 2 jam yang lalu</p>
+            </div>
+
+            <div class="right-cards">
+                <div class="top-cards">
+                    <div class="card-small">
+                        <div class="badge badge-blue">ORGANISASI</div>
+                        <h4>PENDAFTARAN EKSKUL BARU (Teater & Pramuka)</h4>
+                        <p>Diposting 4 jam yang lalu</p>
+                    </div>
+                    <div class="card-small">
+                        <div class="badge badge-blue">AKADEMIK</div>
+                        <h4>HASIL SELEKSI SPMB 2026</h4>
+                        <p>Diposting kemarin</p>
+                    </div>
+                </div>
+                <div class="card-wide">
+                    <h4>HASIL SELEKSI BEASISWA PRESTASI<br>TAHAP 2</h4>
+                    <div class="badge badge-blue">AKADEMIK</div>
+                </div>
+            </div>
+        </div>    
+    </section>
+
+    <section class="dokumentasi-section" id="dokumentasi-section">
+        <h2>DOKUMENTASI KEGIATAN SISWA</h2>
+        <div class="dok-grid">
+            <div class="dok-card">
+                <img src="Upacara Bendera.jpg" alt="HARDIKNAS">
+                  <h3>Hardiknas</h3>
+                <a href="dokumentasi.html">Lihat Lainnya</a>
+            </div>
+            <div class="dok-card">
+                <img src="kelazz.jpg" alt="Kelulusan">
+                <h3>Hari Kelulusan</h3>
+                <a href="dokumentasi.html">Lihat Lainnya</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+    <img src="footer.png" class="footer-bg-single" alt="">
+
+    <div class="footer-container">
+        <div class="footer-brand">
+            <img src="logo.jpg" alt="Logo SMK" class="footer-logo">
+            <div class="brand-text">
+                <h4>SMK NEGERI 1 BANYUWANGI</h4>
+                <p>Sebagai Sekolah Menengah Kejuruan, kami berkomitmen mencetak generasi yang tidak hanya berilmu, tetapi juga terampil, mandiri, dan siap menghadapi tantangan dunia kerja yang terus berkembang.</p>
+            </div>
+        </div>
+        
+        <div class="footer-links">
+            <h4>Contact</h4>
+            <div class="links-row">
+                <a href="#">FAQs</a>
+                <a href="#">Contact</a>
+                <a href="#">About</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <a href="mailto:smkn1.banyuwangi@yahoo.com">smkn1.banyuwangi@yahoo.com</a>
+    </div>
+</footer>
+
+    <script>
+        const searchButton = document.getElementById('searchButton');
+        const searchInput = document.getElementById('searchInput');
+        const resultsContainer = document.getElementById('search-results-container');
+        const btnAbout = document.getElementById('btnAbout');
+
+       function performSearch() {
+    const keyword = searchInput.value.toLowerCase().trim();
+    resultsContainer.innerHTML = ''; 
+
+    if (keyword === "hari kartini") {
+        resultsContainer.innerHTML = `
+            <a href="rincian_kartini.html" style="text-decoration: none; color: inherit;">
+                <div class="search-result-card">
+                    <div class="result-content">
+                        <h3>PERINGATAN HARI KARTINI 2026</h3>
+                    </div>
+                    <div class="result-badge">KEGIATAN</div>
+                </div>
+            </a>
+        `;
+    } else if (keyword === "beasiswa") {
+        resultsContainer.innerHTML = `
+            <a href="informasi.html" style="text-decoration: none; color: inherit;">
+                <div class="search-result-card">
+                    <div class="result-content">
+                        <h3>HASIL SELEKSI BEASISWA PRESTASI TAHAP 2</h3>
+                    </div>
+                    <div class="result-badge">AKADEMIK</div>
+                </div>
+            </a>
+        `;
+    } else if (keyword !== "") {
+        resultsContainer.innerHTML = `<p style="margin-top:20px; font-weight:800;">Data tidak ditemukan.</p>`;
+    }
+}
+
+        searchButton.addEventListener('click', performSearch);
+        searchInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') performSearch();
+        });
+
+        btnAbout.addEventListener('click', function(event) {
+            event.preventDefault();
+            alert("Halo! Ini adalah portal informasi untuk siswa SMKN 1 Banyuwangi.");
+        });
+    </script>
+</body>
+</html>

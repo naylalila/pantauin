@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PANTAU.IN - SMKN 1 Banyuwangi</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+     <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">PANTAU.IN</div>
+        <ul class="nav-links">
+             <li><a href="home.html">HOME</a></li>
+            <li><a href="#informasi-section">INFORMASI</a></li>
+            <li><a href="#dokumentasi-section">DOKUMENTASI</a></li>
+            <li><a href="about.html" class="btn-about" id="btnAbout">ABOUT</a></li>
+        </ul>
+    </nav>
+
+    <!-- Container Utama tempat JavaScript akan merender konten -->
+    <main id="app-container" class="main-content">
+        <!-- Konten akan di-generate oleh JavaScript di bawah -->
+    </main>
+
+    <!-- ========================================== -->
+    <!-- KODE JAVASCRIPT SEBAGAI PENGGERAK UTAMA    -->
+    <!-- ========================================== -->
+    <script>
+        // 1. Kita simpan data pengumuman di dalam Object (Mirip JSON)
+        const dataPengumuman = {
+            judulBaris1: "PENGUMUMAN PENTING:",
+            judulBaris2: "UPACARA HARDIKNAS 2026",
+            badgeText: "PENTING",
+            tanggal: "Sabtu, 2 Mei 2026",
+            waktu: "07.00 - 10.00",
+            seragam: "Seragam Abu Putih",
+            pesanTambahan: "Anak - anak hebat..... Kami ingatkan kembali H - 7 sebelum pelaksanaan upacara hari Senin, 4 Mei 2026. Mohon dicek kembali kelengkapan bet kelas agar *sudah disesuaikan* dengan tingkatan kelas dan jurusan kalian masing\". Saat upacara, kami akan memeriksa kelengkapan bet dan kerapian rambut kalian. Terimakasih kerjasamanya."
+        };
+
+        // 2. Fungsi untuk membangun tampilan HTML menggunakan JavaScript
+        function renderHalaman() {
+            // Ambil container dari HTML
+            const container = document.getElementById('app-container');
+
+            // Buat struktur HTML menggunakan Template Literal (Backticks)
+            const htmlContent = `
+                <div class="header-title">
+                    <h2>${dataPengumuman.judulBaris1}<br>${dataPengumuman.judulBaris2}</h2>
+                </div>
+
+                <div class="announcement-box">
+                    <div class="badge-red">${dataPengumuman.badgeText}</div>
+                    
+                    <ul class="details-list">
+                        <li>
+                            <i class="fa-solid fa-calendar-days icon"></i> 
+                            <span>${dataPengumuman.tanggal}</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-clock icon"></i> 
+                            <span>${dataPengumuman.waktu}</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-shirt icon"></i> 
+                            <span>${dataPengumuman.seragam}</span>
+                        </li>
+                    </ul>
+
+                    <div class="extra-message">
+                        <i class="fa-solid fa-bullhorn icon-large"></i>
+                        <p>${dataPengumuman.pesanTambahan}</p>
+                    </div>
+                </div>
+            `;
+
+            // 3. Masukkan hasil render ke dalam layar
+            container.innerHTML = htmlContent;
+        }
+
+        // 4. Jalankan fungsi saat halaman selesai dimuat
+        document.addEventListener("DOMContentLoaded", renderHalaman);
+
+    </script>
+    <footer class="footer">
+    <!-- Cukup satu image dekorasi dari kamu -->
+    <img src="footer.png" class="footer-bg-single" alt="">
+
+    <div class="footer-container">
+        <div class="footer-brand">
+            <img src="logo.jpg" alt="Logo SMK" class="footer-logo">
+            <div class="brand-text">
+                <h4>SMK NEGERI 1 BANYUWANGI</h4>
+                <p>Sebagai Sekolah Menengah Kejuruan, kami berkomitmen mencetak generasi yang tidak hanya berilmu, tetapi juga terampil, mandiri, dan siap menghadapi tantangan dunia kerja yang terus berkembang.</p>
+            </div>
+        </div>
+        
+        <div class="footer-links">
+            <h4>Contact</h4>
+            <div class="links-row">
+                <a href="#">FAQs</a>
+                <a href="#">Contact</a>
+                <a href="#">About</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <a href="mailto:smkn1.banyuwangi@yahoo.com">smkn1.banyuwangi@yahoo.com</a>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PANTAU.IN - SMKN 1 Banyuwangi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+     <nav class="navbar">
+        <div class="logo">PANTAU.IN</div>
+        <ul class="nav-links">
+             <li><a href="home.html">HOME</a></li>
+            <li><a href="home.html#informasi-section">INFORMASI</a></li>
+            <li><a href="home.html#dokumentasi-section">DOKUMENTASI</a></li>
+            <li><a href="about.html" class="btn-about" id="btnAbout">ABOUT</a></li>
+        </ul>
+    </nav>
+
+    <main id="app-container" class="main-content">
+        </main>
+
+    <script>
+        // 1. Data pengumuman
+        const dataPengumuman = {
+            judulBaris1: "KEGIATAN TAHUNAN",
+            judulBaris2: "HARI KARTINI 21 APRIL 2026",
+            badgeText: "PENTING",
+            tanggal: "Selasa, 21 April 2026",
+            waktu: "07.00 - 12.15",
+            seragam: "Pakaian Adat / Batik", // Sesuaikan seragamnya di sini
+            pesanTambahan: "SMKN 1 Banyuwangi sukses menyelenggarakan rangkaian kegiatan Hari Kartini dengan sangat meriah. Acara ini tidak hanya diisi dengan upacara sebagai bentuk penghormatan, tetapi juga diramaikan dengan ajang fashion show yang bertujuan untuk melestarikan budaya sekaligus menumbuhkan rasa percaya diri dan semangat emansipasi di kalangan pelajar."
+        };
+
+        // 2. Fungsi untuk membangun tampilan HTML
+        function renderHalaman() {
+            const container = document.getElementById('app-container');
+
+            const htmlContent = `
+                <div class="header-title">
+                    <h2>${dataPengumuman.judulBaris1}<br>${dataPengumuman.judulBaris2}</h2>
+                </div>
+
+                <div class="announcement-box">
+                    <div class="badge-red">${dataPengumuman.badgeText}</div>
+                    
+                    <ul class="details-list">
+                        <li>
+                            <i class="fa-solid fa-calendar-days icon"></i> 
+                            <span>${dataPengumuman.tanggal}</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-clock icon"></i> 
+                            <span>${dataPengumuman.waktu}</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-shirt icon"></i> 
+                            <span>${dataPengumuman.seragam}</span>
+                        </li>
+                    </ul>
+
+                    <div class="extra-message">
+                        <i class="fa-solid fa-bullhorn icon-large"></i>
+                        <p>${dataPengumuman.pesanTambahan}</p>
+                    </div>
+
+                    <div style="margin-top: 30px;">
+                        <a href="dokumentasi.html" class="btn-dokumentasi-v2">
+                            Dokumentasi
+                        </a>
+                    </div>
+                </div>
+            `;
+
+            container.innerHTML = htmlContent;
+        }
+
+        document.addEventListener("DOMContentLoaded", renderHalaman);
+    </script>
+
+    <footer class="footer">
+        <img src="footer.png" class="footer-bg-single" alt="">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="logo.jpg" alt="Logo SMK" class="footer-logo">
+                <div class="brand-text">
+                    <h4>SMK NEGERI 1 BANYUWANGI</h4>
+                    <p>Sebagai Sekolah Menengah Kejuruan, kami berkomitmen mencetak generasi yang tidak hanya berilmu, tetapi juga terampil, mandiri, dan siap menghadapi tantangan dunia kerja yang terus berkembang.</p>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Contact</h4>
+                <div class="links-row">
+                    <a href="#">FAQs</a>
+                    <a href="#">Contact</a>
+                    <a href="#">About</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <a href="mailto:smkn1.banyuwangi@yahoo.com">smkn1.banyuwangi@yahoo.com</a>
+        </div>
+    </footer>
+</body>
+</html>

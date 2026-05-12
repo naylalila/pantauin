@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PANTAU.IN - SMKN 1 Banyuwangi</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+     <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">PANTAU.IN</div>
+        <ul class="nav-links">
+          <li><a href="home.html">HOME</a></li>
+            <li><a href="#informasi-section">INFORMASI</a></li>
+            <li><a href="#dokumentasi-section">DOKUMENTASI</a></li>
+            <li><a href="about.html" class="btn-about" id="btnAbout">ABOUT</a></li>
+        </ul>
+    </nav>
+
+    <!-- Konten Utama -->
+    <main class="container">
+        <h1 class="page-title">DOKUMENTASI<br>KEGIATAN SISWA</h1>
+        
+        <!-- Tempat 6 Card akan muncul via JS -->
+        <div id="grid-dokumentasi" class="dok-grid-v2"></div>
+    </main>
+
+    <script>
+        // Data Dokumentasi (6 Card)
+        const listDokumentasi = [
+            { img: "kartiniday.png", alt: "Kartini 1" },
+            { img: "kartiniday.png", alt: "Kartini 2" },
+            { img: "kartiniday.png", alt: "Kartini 3" },
+            { img: "kartiniday.png", alt: "Kartini 4" },
+            { img: "kartiniday.png", alt: "Kartini 5" },
+            { img: "kartiniday.png", alt: "Kartini 6" }
+        ];
+
+        function renderDokumentasi() {
+            const grid = document.getElementById('grid-dokumentasi');
+            
+            // Loop untuk membuat 6 card
+            const cardsHTML = listDokumentasi.map(item => `
+                <div class="dok-card-v2">
+                    <div class="card-image-box">
+                        <img src="${item.img}" alt="${item.alt}">
+                    </div>
+                    <div class="card-red-footer"></div>
+                </div>
+            `).join('');
+
+            grid.innerHTML = cardsHTML;
+        }
+
+        document.addEventListener("DOMContentLoaded", renderDokumentasi);
+    </script>
+
+     <footer class="footer">
+    <!-- Cukup satu image dekorasi dari kamu -->
+    <img src="footer.png" class="footer-bg-single" alt="">
+
+    <div class="footer-container">
+        <div class="footer-brand">
+            <img src="logo.jpg" alt="Logo SMK" class="footer-logo">
+            <div class="brand-text">
+                <h4>SMK NEGERI 1 BANYUWANGI</h4>
+                <p>Sebagai Sekolah Menengah Kejuruan, kami berkomitmen mencetak generasi yang tidak hanya berilmu, tetapi juga terampil, mandiri, dan siap menghadapi tantangan dunia kerja yang terus berkembang.</p>
+            </div>
+        </div>
+        
+        <div class="footer-links">
+            <h4>Contact</h4>
+            <div class="links-row">
+                <a href="#">FAQs</a>
+                <a href="#">Contact</a>
+                <a href="#">About</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <a href="mailto:smkn1.banyuwangi@yahoo.com">smkn1.banyuwangi@yahoo.com</a>
+    </div>
+</footer>
+
+</body>
+</html>
