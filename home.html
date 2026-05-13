@@ -159,10 +159,11 @@
             if (event.key === 'Enter') performSearch();
         });
 
-        btnAbout.addEventListener('click', function(event) {
-            event.preventDefault();
-            alert("Halo! Ini adalah portal informasi untuk siswa SMKN 1 Banyuwangi.");
-        });
+       btnAbout.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        alert("Halo! Kamu akan diarahkan ke halaman Profile Developer SMKN 1 Banyuwangi.");
+        window.location.href = "about.html"; 
+});
     </script>
 </body>
 </html>
